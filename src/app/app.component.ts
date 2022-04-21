@@ -6,7 +6,7 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  getData: any={name:''};
+  getData: any = { name: '', main: '', temp: '', mintemp: '', maxtemp: '' };
   constructor() {}
 
   ngOnInit() {}
@@ -31,6 +31,11 @@ export class AppComponent {
 
   setgetData(data) {
     this.getData = data;
-    console.log(this.getData.name);
+    console.log(data.main.temp);
+    this.getData.main = data.weather[0].main;
+    this.getData.temp = data.main.temp;
+    this.getData.mintemp = data.main.temp_min;
+    this.getData.maxtemp = data.main.temp_max;
+    this.showTextBox = false;
   }
 }

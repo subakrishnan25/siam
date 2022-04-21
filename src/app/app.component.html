@@ -14,8 +14,13 @@
       >
         Show Weather
       </button>
-      <p>{{getData.name}}</p>      
+      <div *ngIf="!showTextBox">
+        <p>City Name: {{ getData.name }}</p>
+        <p>Main : {{ getData.main }}</p>
+        <p>Temp : {{ getData.temp }}</p>
+        <p>Min Temp : {{ getData.mintemp }}</p>
+        <p>Max Temp : {{ getData.maxtemp }}</p>
+      </div>
     </div>
-   
   </div>
 </div>
