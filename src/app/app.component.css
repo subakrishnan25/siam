@@ -1,0 +1,12 @@
+#main_div {
+  display: block;
+  border-radius: 10px;
+  width: 200px;
+  height: 220px;
+  background: rgba(172, 164, 164, 0.829);
+  color: rgb(5, 5, 5);
+  font-family: sans-serif;
+}
+p{
+  color: rgb(0, 0, 0);
+}

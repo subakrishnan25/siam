@@ -1,14 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-      One of three columns
+    <div
+      id="main_div"
+      (click)="toggleTextBox(1)"
+      class="col-lg-4 col-md-6 col-sm-6"
+    >
+      <input *ngIf="showTextBox" [(ngModel)]="city1" />
+      <button
+        *ngIf="showTextBox"
+        (click)="getgetData()"
+        type="button"
+        class="btn btn-primary"
+      >
+        Show Weather
+      </button>
+      <p>{{getData.name}}</p>      
     </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
+   
   </div>
 </div>
-
