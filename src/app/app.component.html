@@ -1,29 +1,100 @@
 <div class="container">
   <div class="row">
-    <div
-      id="main_div"
-      (click)="toggleTextBox(1)"
-      class="col-lg-4 col-md-6 col-sm-6"
-    >
-      <input *ngIf="showTextBox" [(ngModel)]="city1" />
-      <button
-        *ngIf="showTextBox"
-        (click)="getgetData()"
-        type="button"
-        class="btn btn-primary"
+    <div class="col-lg-4 col-sm-6 col-md-6" style="padding:10px;">
+      <div
+        id="main_div"
+        (click)="toggleTextBox('div1')"
+        class="col-sm-4"
+        [ngClass]="getData.bgclass ? getData.bgclass : 'Clear'"
       >
-        Show Weather
-      </button>
-      <div *ngIf="!showTextBox">
-        <p>City Name: {{ getData.name }}</p>
-        <p>Main : {{ getData.main }}</p>
-        <p>Temp : {{ getData.temp }}</p>
-        <p>Min Temp : {{ getData.mintemp }}</p>
-        <p>Max Temp : {{ getData.maxtemp }}</p>
-        <button class="btn btn-primary btn-sm mt-9" (click)="editcity()">
-          enter city
-        </button>
+        <div *ngIf="!showTextBox" style="padding:10px;">
+          <p>City Name: {{ getData.name }}</p>
+          <p>Main : {{ getData.main }}</p>
+          <p>Temp : {{ getData.temp }}</p>
+          <p>Min Temp : {{ getData.mintemp }}</p>
+          <p>Max Temp : {{ getData.maxtemp }}</p>
+          <button
+            class="btn btn-success btn-sm mt-9"
+            (click)="toggleTextBox('div1')"
+          >
+            enter city
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 col-md-6" style="padding:10px;">
+      <div
+        id="main_div"
+        (click)="toggleTextBox('div2')"
+        class="col-sm-4"
+        [ngClass]="getData1.bgclass ? getData1.bgclass : 'Clear'"
+      >
+        <div *ngIf="!showTextBox" style="padding:10px;">
+          <p>City Name: {{ getData1.name }}</p>
+          <p>Main : {{ getData1.main }}</p>
+          <p>Temp : {{ getData1.temp }}</p>
+          <p>Min Temp : {{ getData1.mintemp }}</p>
+          <p>Max Temp : {{ getData1.maxtemp }}</p>
+          <button
+            class="btn btn-success btn-sm mt-9"
+            (click)="toggleTextBox('div2')"
+          >
+            enter city
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-6 col-md-6" style="padding:10px;">
+      <div
+        id="main_div"
+        (click)="toggleTextBox('div3')"
+        class="col-sm-4"
+        [ngClass]="getData2.bgclass ? getData2.bgclass : 'Clear'"
+      >
+        <div *ngIf="!showTextBox" style="padding:10px;">
+          <p>City Name: {{ getData2.name }}</p>
+          <p>Main : {{ getData2.main }}</p>
+          <p>Temp : {{ getData2.temp }}</p>
+          <p>Min Temp : {{ getData2.mintemp }}</p>
+          <p>Max Temp : {{ getData2.maxtemp }}</p>
+          <button
+            class="btn btn-success btn-sm mt-9"
+            (click)="toggleTextBox('div3')"
+          >
+            enter city
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-6 col-md-6" style="padding:10px;">
+      <div
+        id="main_div"
+        (click)="toggleTextBox('div4')"
+        class="col-sm-4"
+        [ngClass]="getData3.bgclass ? getData3.bgclass : 'Clear'"
+      >
+        <div *ngIf="!showTextBox" style="padding:10px;">
+          <p>City Name: {{ getData3.name }}</p>
+          <p>Main : {{ getData3.main }}</p>
+          <p>Temp : {{ getData3.temp }}</p>
+          <p>Min Temp : {{ getData3.mintemp }}</p>
+          <p>Max Temp : {{ getData3.maxtemp }}</p>
+          <button
+            class="btn btn-success btn-sm mt-9"
+            (click)="toggleTextBox('div4')"
+          >
+            enter city
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<app-childComponent
+  *ngIf="popup"
+  (close)="closePopup($event)"
+  [module]="divname"
+>
+</app-childComponent>
