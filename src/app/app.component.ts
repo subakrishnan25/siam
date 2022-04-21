@@ -14,6 +14,10 @@ export class AppComponent {
   city1: string = '';
 
   toggleTextBox(var_: number) {
+    this.showTextBox = true;
+  }
+
+  editcity() {
     this.showTextBox = !this.showTextBox;
   }
 
@@ -25,6 +29,9 @@ export class AppComponent {
     )
       .then((response) => response.json())
       .then((data) => {
+        if(data.cod!=200){
+            alert(data.message);
+        }
         this.setgetData(data);
       });
   }
